@@ -11,11 +11,14 @@ import {
 } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { Feather, FontAwesome } from "@expo/vector-icons";
+import ShimmerPlaceHolder from "react-native-shimmer-placeholder";
+import LinearGradient from "react-native-linear-gradient";
 
 import mapMarkerImg from "../images/map-marker.png";
-import { RectButton } from "react-native-gesture-handler";
 import { useRoute } from "@react-navigation/native";
 import api from "../services/api";
+import delay from "../utils/delay";
+import ShimmerOrphanageDetails from "../components/ShimmerOrphanageDetails";
 
 interface OrphanageDetailsRouteParams {
   id: number;
@@ -39,21 +42,21 @@ interface Orphanage {
 export default function OrphanageDetails() {
   const route = useRoute();
   const [orphanage, setOrphanage] = useState<Orphanage>();
+  const [shimmerVisibility, setShimmerVisibility] = useState(false);
 
   const params = route.params as OrphanageDetailsRouteParams;
 
   useEffect(() => {
-    api.get(`orphanages/${params.id}`).then((response) => {
-      setOrphanage(response.data);
+    delay(2000).then(() => {
+      api.get(`orphanages/${params.id}`).then((response) => {
+        setOrphanage(response.data);
+        setShimmerVisibility(true);
+      });
     });
   }, [params.id]);
 
   if (!orphanage) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.description}>Carregando...</Text>
-      </View>
-    );
+    return <ShimmerOrphanageDetails />;
   }
 
   function handleOpenGoogleMapsRoutes() {
@@ -67,6 +70,7 @@ export default function OrphanageDetails() {
       <View style={styles.imagesContainer}>
         <ScrollView horizontal pagingEnabled>
           {orphanage.images.map((image) => {
+            console.log(image);
             return (
               <Image
                 key={image.id}
@@ -144,11 +148,6 @@ export default function OrphanageDetails() {
             </View>
           )}
         </View>
-
-        {/* <RectButton style={styles.contactButton} onPress={() => {}}>
-          <FontAwesome name="whatsapp" size={24} color="#FFF" />
-          <Text style={styles.contactButtonText}>Entrar em contato</Text>
-        </RectButton> */}
       </View>
     </ScrollView>
   );
@@ -285,4 +284,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: 16,
   },
+
+  shimmerPlaceHolder: {},
 });

@@ -15,7 +15,7 @@
 
 ### :rocket: A app made to connect orphanages with potential visitors, using [React](https://pt-br.reactjs.org/), [Node.js](https://nodejs.org/en/) and [React Native](https://reactnative.dev/).
 
-> This project was developed with the @Rockeseat team at the Next Level Week #3.
+> This project was developed with the [@Rockeseat](https://github.com/Rocketseat) team at the Next Level Week #3.
 
 ## 📸 Screenshots
 

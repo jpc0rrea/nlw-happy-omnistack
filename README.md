@@ -150,4 +150,4 @@ This project is under the [MIT](./LICENSE) license.
 
 ## 🔄 My updates
 
-- Shimmer effect on the mobile Orphanage Details page
+- Shimmer effect on the mobile Orphanage Details page.

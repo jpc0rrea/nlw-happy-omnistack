@@ -10,6 +10,7 @@
 - [How to run](#-how-to-run)
 - [Contributions](#-contributions)
 - [License](#-license)
+- [My updates](#-my-updates)
 
 ## About
 
@@ -146,3 +147,7 @@ Follow the steps below to contribute:
 ## 📜 License
 
 This project is under the [MIT](./LICENSE) license.
+
+## 🔄 My updates
+
+- Shimmer effect on the mobile Orphanage Details page

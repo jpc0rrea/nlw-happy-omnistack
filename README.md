@@ -5,6 +5,7 @@
 ## 📌 Index
 
 - [About](#-about)
+- [Web preview](#-web-preview)
 - [Screenshots](#-screenshots)
 - [Techs](#-techs)
 - [How to run](#-how-to-run)
@@ -17,6 +18,11 @@
 ### :rocket: An app made to connect orphanages with potential visitors, using [React](https://pt-br.reactjs.org/), [Node.js](https://nodejs.org/en/) and [React Native](https://reactnative.dev/).
 
 > This project was developed with the [@Rockeseat](https://github.com/Rocketseat) team at the Next Level Week #3.
+
+## :eyes: Web Preview
+
+You can access the website at:
+👉 demo: https://focused-hawking-9310c0.netlify.app/
 
 ## 📸 Screenshots
 
